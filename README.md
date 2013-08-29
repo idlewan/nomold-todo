@@ -1,9 +1,9 @@
 # noMold TodoMVC Example
 noMold is a very small library/framework that helps to write small testable modules that don't depend upon each other.
 
-It provide a **mediator/observer**-inspired interface between modules:
-you first register *callbacks* that need to be called __whenever a variable change__ (the variable is handled/stored by the library).
-You change the value of the variables with a *setter function*, and your previously-registered callbacks *are called*.
+It provide a *mediator/observer*-inspired interface between modules:  
+you first register **callbacks** that need to be called **whenever a variable change** (the variable is handled/stored by the library).
+You change the value of the variables with a **setter function**, and your previously-registered callbacks are automatically called, with arguments.
 
 
 # Hacking
