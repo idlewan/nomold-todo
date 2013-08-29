@@ -1,18 +1,22 @@
 # noMold TodoMVC Example
 noMold is a very small library/framework that helps to write small testable modules that don't depend upon each other.
 
-It provide a *mediator/observer*-inspired interface between modules:  
-you first register **callbacks** that need to be called **whenever a variable change** (the variable is handled/stored by the library).
-You change the value of the variables with a **setter function**, and your previously-registered callbacks are automatically called, with arguments.
+It provides a *mediator/observer*-inspired interface between modules.  
+- You register **callbacks** that need to be called **whenever a variable change** (the variable is handled/stored by the library).
+- You change the value of the variables with a **setter function**, and your previously-registered callbacks *are automatically called*, with the arguments they need.
 
 
 # Hacking
-This project use `coffee-script 1.6.2`, NOT `1.6.3`.  
+This project compiles with `coffee-script 1.6.2`, *NOT* `1.6.3`.  
 Install it with:
 
     # npm install -g coffee-script@1.6.2
 
-Use `make coffee` to watch and compile coffeescript files and `watch make` for jade templates.
+Better yet, use iced-coffee-script, which works with the latest version:
+
+    # npm install -g iced-coffee-script
+
+Use `make coffee` (or `make ice`) to watch and compile coffeescript files and `watch make` for jade templates.
 
 
 # Templates

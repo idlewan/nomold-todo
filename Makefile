@@ -23,10 +23,16 @@ $(OUTPUT_DIR)/%.jade.js: $(TEMPLATE_DIR)/%.jade
 	@echo "compiled $<"
 
 coffee_once: $(OUTPUT_DIR)
-	coffee -l --output $(OUTPUT_DIR) --compile $(COFFEE_DIR)
+	coffee --output $(OUTPUT_DIR) --compile $(COFFEE_DIR)
 
 coffee: $(OUTPUT_DIR)
-	coffee -l -w --output $(OUTPUT_DIR) --compile $(COFFEE_DIR)
+	coffee -w --output $(OUTPUT_DIR) --compile $(COFFEE_DIR)
+
+ice_once: $(OUTPUT_DIR)
+	iced --output $(OUTPUT_DIR) --compile $(COFFEE_DIR)
+
+ice: $(OUTPUT_DIR)
+	iced -w --output $(OUTPUT_DIR) --compile $(COFFEE_DIR)
 
 css: $(CSS_DIR)
 	stylus -w --out $(CSS_DIR) ./styl/*.styl
