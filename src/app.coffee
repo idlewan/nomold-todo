@@ -30,11 +30,10 @@ set("tasks", my_tasks)
 todo_input = document.getElementById('new-todo')
 
 todo_input.addEventListener 'keypress', (e) ->
+    # Add a new todo item
     if e.keyCode == ENTER_KEY
         if e.target.value.trim() == ''
             return
         add("tasks", title: e.target.value)
         e.target.value = ''
     return
-
-

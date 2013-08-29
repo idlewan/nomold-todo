@@ -24,33 +24,28 @@ render = (tasks, filter) ->
 render._name = 'render.list'
 
 
+get_li_item = (target) ->
+    li = target
+    while li.nodeName != 'LI'
+        li = li.parentNode
+    return li
+
+
 list.addEventListener 'click', (e) ->
     target = e.target
 
-    # you clicked on the destroy button
+    # you clicked on the destroy button, remove the item
     if target.classList.contains 'destroy'
-        remove_item(target)
+        li = get_li_item(target)
+        id = li.dataset.id
+        remove("tasks", id)
     
-    # you clicked on the checkmark
+    # you clicked on the checkmark, mark as completed
     else if target.classList.contains 'toggle'
-        li = target
-        while li.nodeName != 'LI'
-            li = li.parentNode
-
+        li = get_li_item(target)
         li.classList.toggle 'completed'
-
         update_item(li)
 
-    return
-
-
-remove_item = (destroy_button) ->
-    li = destroy_button
-    while li.nodeName != 'LI'
-        li = li.parentNode
-
-    id = li.dataset.id
-    remove("tasks", id)
     return
 
 
@@ -70,9 +65,7 @@ list.addEventListener 'dblclick', (e) ->
 
 
 edit_item = (label) ->
-    li = label
-    while li.nodeName != 'LI'
-        li = li.parentNode
+    li = get_li_item(label)
 
     input = document.createElement 'input'
     input.className = 'edit'
