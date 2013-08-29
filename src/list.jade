@@ -1,0 +1,12 @@
+for t, i in tasks
+  li(
+    class= t.completed ? "completed" : ""
+    data-id= i
+    )
+    .view
+      if t.completed
+        input.toggle(type='checkbox', checked)
+      else
+        input.toggle(type='checkbox')
+      label= t.title
+      button.destroy
