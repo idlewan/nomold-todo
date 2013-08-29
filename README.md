@@ -7,6 +7,11 @@ You change the value of the variables with a **setter function**, and your previ
 
 
 # Hacking
+This project use `coffee-script 1.6.2`, NOT `1.6.3`.  
+Install it with:
+
+    # npm install -g coffee-script@1.6.2
+
 Use `make coffee` to watch and compile coffeescript files and `watch make` for jade templates.
 
 
