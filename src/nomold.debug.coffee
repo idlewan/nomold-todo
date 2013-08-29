@@ -1,3 +1,4 @@
+# Shortcuts: console.log is too long to type and read
 window.log = ->
     console.log.apply console, arguments
 
@@ -10,7 +11,8 @@ window.warn = ->
 window.assert = ->
     console.assert.apply console, arguments
 
-if /WebKit/.test navigator.userAgent
+# Nice colors for the consoles that can display them
+if /WebKit/.test(navigator.userAgent) or console.firebug or console.exception
     window.info = ->
         if Array.isArray arguments[0] or typeof arguments[0] == 'object'
             console.info.apply console, arguments

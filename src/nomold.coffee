@@ -148,8 +148,9 @@ window.replace_in = (var_name, idx, new_value, do_notify) ->
 
     values[id][idx] = new_value
 
-    if do_notify
-        notify(id)
+    if do_notify == false
+        return
+    notify(id)
     return
 
 window.get = (var_name) ->
