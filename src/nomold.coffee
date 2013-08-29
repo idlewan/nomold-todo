@@ -5,7 +5,7 @@ values = []
 callbacks = []
 bindings = []
 
-# suscribing creates an entry in ids for each vars requested if they don't have one
+# subscribing creates an entry in ids for each vars requested if they don't have one
 window.subscribe = (list_args, fn) ->
     args_id = []
     if not Array.isArray(list_args)
@@ -20,7 +20,7 @@ window.subscribe = (list_args, fn) ->
     cb_closed = ->
         params = (values[i] for i in args_id)
         fn.apply(null, params)
-    info 'subscribe:', fn._name
+    info 'subscribe:', fn._name, list_args
     cb_closed._name = fn._name
     callbacks.push(cb_closed)
     cb_id = callbacks.length - 1
